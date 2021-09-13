@@ -6,6 +6,9 @@ const $form = document.getElementById("formulario"),
 let expresionRegular = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
     enlaces = [];
 
+/* COPIAR TEXTO */
+
+
 const validarForm = async () => {
     try {
         let url = await fetch(`https://api.shrtco.de/v2/shorten?url=${$input.value}`);
@@ -28,12 +31,12 @@ const guardarEnlace = (data) => {
     enlaces.push(enlace);
 }
 const mostrarDatos = () => {
-    enlaces = JSON.parse(localStorage.getItem("enlaces") || '[]');
+    enlaces = JSON.parse(localStorage.getItem("enlaces") || "[]");
     $insertarEnlace.innerHTML = "";
     if(enlaces === null){
         enlaces = [];
-    } else {
-        enlaces.forEach(el => {
+    } 
+    enlaces.forEach(el => {
         $insertarEnlace.innerHTML+=`
             <div class="divAgregado">
                 <p class="enlaceOriginal">${el.enlaceOriginal}</p>
@@ -46,7 +49,7 @@ const mostrarDatos = () => {
         if(enlaces.length > 0) {
             $sectionBorrar.style.display = "block";
         } 
-    }
+    
 }
 
 const guardarLS = () => {
@@ -68,6 +71,28 @@ const validarInput = () => {
     }
 }
 
+const copiarTexto = () => {
+    let content = document.querySelector('.enlacecorto').innerHTML;
+    console.log(navigator.clipboard)
+    navigator.clipboard.writeText(content)
+        .then(() => {
+        console.log("Text copied to clipboard...")
+    })
+        .catch(err => {
+        console.log('Something went wrong', err);
+    })
+
+    setTimeout(() => {
+        document.querySelector(".botonParaCopiar").textContent = "Copied!"
+        document.querySelector(".botonParaCopiar").style.backgroundColor = "#3A3054"
+        setTimeout(() => {
+            document.querySelector(".botonParaCopiar").textContent = "Copy"
+            document.querySelector(".botonParaCopiar").style.backgroundColor = "#2BD0D0"
+        }, 3000); 
+    });
+    
+}
+
 $form.addEventListener("submit", e => {
     e.preventDefault();
     validarForm()
@@ -85,6 +110,8 @@ document.addEventListener("click", e => {
         localStorage.clear();
         enlaces = [];
     }
+    if(e.target.matches(".botonParaCopiar")) copiarTexto();
 })
 
 document.addEventListener("DOMContentLoaded", mostrarDatos);
+
