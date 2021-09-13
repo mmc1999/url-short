@@ -27,9 +27,8 @@ const guardarEnlace = (data) => {
     }
     enlaces.push(enlace);
 }
-
 const mostrarDatos = () => {
-    enlaces = JSON.parse(localStorage.getItem("enlaces"));
+    enlaces = JSON.parse(localStorage.getItem("enlaces") || '[]');
     $insertarEnlace.innerHTML = "";
     if(enlaces === null){
         enlaces = [];
@@ -55,10 +54,25 @@ const guardarLS = () => {
     mostrarDatos();
 };
 
+const validarInput = () => {
+    if(expresionRegular.test($input.value)) {
+        document.querySelector(".mensajeError").classList.add("desactivar")
+        document.querySelector(".input").classList.remove("inputInvalido")
+    } else {
+        document.querySelector(".mensajeError").classList.remove("desactivar")
+        document.querySelector(".input").classList.add("inputInvalido")
+        setTimeout(() => {
+            document.querySelector(".mensajeError").classList.add("desactivar")
+            document.querySelector(".input").classList.remove("inputInvalido")
+        }, 4000);  
+    }
+}
+
 $form.addEventListener("submit", e => {
     e.preventDefault();
     validarForm()
     guardarLS();
+    validarInput();
 });
 
 document.addEventListener("click", e => {
@@ -73,4 +87,4 @@ document.addEventListener("click", e => {
     }
 })
 
-document.addEventListener("DOMContentLoaded", mostrarDatos)
+document.addEventListener("DOMContentLoaded", mostrarDatos);

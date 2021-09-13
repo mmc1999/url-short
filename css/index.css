@@ -130,11 +130,13 @@ h1 {
     padding: 20px;
     margin: 50px 20px 0px 20px;
     width: -webkit-fill-available;
+
 }
 form {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 .input {
     width: 100%;
@@ -142,10 +144,9 @@ form {
     height: 45px;
     border: none;
     padding: 10px;
+    margin-bottom: 20px;
 }
-.input:invalid {
-    border: 2px solid #F46363;
-}
+
 .input::placeholder {
     font-weight: 500;
     font-size: 16px;
@@ -155,12 +156,13 @@ form {
     mix-blend-mode: normal;
     opacity: 0.5;
 }
-
-.active1 {
-    display: block;
+.inputInvalido {
+    border: 2px solid #F46363;
+    color: #F46363;
 }
+
 .mensajeError {
-    display: none;
+    display: block;
     font-style: italic;
     font-weight: 500;
     font-size: 12px;
@@ -168,8 +170,13 @@ form {
     letter-spacing: 0.0818182px;
     color: #F46363;
     text-align: left;
+    position: absolute;
+    top: 41px;
+    left: 0px;
 }
-
+.desactivar {
+    display: none;
+}
 .botonDelForm{
     border: none;
     outline: none;
@@ -187,6 +194,7 @@ form {
 .tercerSection {
     background-color:#F2F2F2;
     width: 100%;
+    padding: 0px 20px;
 }
 .divAgregado {
     background-color: white;
@@ -199,7 +207,7 @@ form {
 }
 .enlaceOriginal {
     font-weight: 500;
-    font-size: 10px;
+    font-size: 50%;
     line-height: 36px;
     letter-spacing: 0.12px;
     color: #34313D;
@@ -235,6 +243,7 @@ form {
 .sectionBorrar {
     display: none;
     background-color: #F2F2F2;
+    padding: 0px 80px;
 }
 /*------ cuarta section------------*/
 .cuartoSection {
@@ -421,6 +430,7 @@ footer {
         margin: 0px 80px;
         margin-top: 20px;
         z-index: 5;
+        height: 100px;
     }
     form  {
         flex-direction: row;
@@ -437,7 +447,14 @@ footer {
         width: 250px;
         cursor: pointer;
     }
+    .mensajeError {
+        top: 41px;
+        left: 0px;
+    }
     /*-------------------tercer SECTION---------------*/
+    .tercerSection {
+        padding: 0px 80px;
+    }
     .divAgregado {
         margin: 40px 0px;
         flex-direction: row;
@@ -544,12 +561,35 @@ footer {
     }
     .divDeIconos {
         display: flex;
-        gap: 10px;
+        gap: 20px;
         align-items: flex-start;
         margin: 0%;
     }
-    .iconos:hover {
+    /*.iconos:hover {
         filter: brightness(0.4);
         transition: filter 500ms ease-in-out;
+    }*/
+    .iconos {
+        height: 25px;
+        width: 25px;  
+    }
+    .iconos:hover {
+        filter: brightness(0.5) sepia(1) hue-rotate(140deg) saturate(6);  
+        transition: filter 200ms ease-in-out;   
+    }
+    .facebook {
+        background-image: url("../images/icon-facebook.svg");
+    }
+    .twitter {
+        background-image: url("../images/icon-twitter.svg");
+    }
+    .instagram {
+        background-image: url("../images/icon-instagram.svg");
+    }
+    .pinterest {
+        background-image: url("../images/icon-pinterest.svg");
+    }
+    .facebook, .twitter, .instagram, .pinterest {
+        background-repeat: no-repeat;
     }
 }
