@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div>
+        <img src="images/logo.svg" alt="Logo" class="imagenLogo">
+      </div>
+      <div class="menuMobile borderRadius">
+        <div>
+          <a href="#" class="linkMenuMobile">Features</a>
+          <a href="#" class="linkMenuMobile">Pricing</a>
+          <a href="#" class="linkMenuMobile">Resources</a>
+        </div>
+        <div class="divLogin">
+          <a href="#" class="linkMenuMobile">Login</a>
+          <a href="#" class="linkMenuMobile entrar">Sign Up</a>
+        </div>
+      </div>
+      <div class="divMobile">
+        <img src="images/menuMobile.png" alt="icono menu Mobile" class="iconoMobile">
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="primerSection">
+      <div>
+        <img src="images/illustration-working.svg" alt="Imagen de una persona trabajando" class="imagenPrincipal">
+      </div>
+      <div class="divSprimer">
+        <h1>More than just shorter links</h1>
+        <p class="parrafo ">Build your brand’s recognition and get detailed insights
+          on how your links are performing.</p>
+        <a class="enlaceAshort" href="#input">Get Started</a>
+      </div>
+    </section>
+    <section class="segundoSection borderRadius">
+      <form class="form" id="formulario">
+        <input type="text" placeholder="Shorten a link here..." class="input" id="input">
+        <p class="mensajeError active">Please add a link</p>
+        <button type="submit" class="botonDelForm">Shorten It!</button>
+      </form>
+    </section>
+    <section class="tercerSection insertarLosEnlaces">
+      <div class="divAgregado">
+        <p class="enlaceOriginal">https://www.frontendmentor.io</p>
+        <div class="divAdentroGenerado">
+          <p class="enlaceOriginal enlacecorto">https://rel.ink/k4lKyk</p>
+          <button class="botonParaCopiar">copy</button>
+        </div>
+      </div>
+    </section>
+    <section class="sectionBorrar">
+      <button type="button" class="botonDelForm borrarTodo">all delete</button>
+    </section>
+    <section class="cuartoSection">
+      <div class="divh2Scuarto">
+        <h2 class="h2">Advanced Statistics</h2>
+        <p class="parrafo centrar">Track how your links are performing across the web with our
+          advanced statistics dashboard.</p>
+      </div>
+      <div class="divTresDiv">
+        <div class="divDelcuarto">
+          <div class="divImagenScuarto">
+            <img src="./images/icon-brand-recognition.svg" alt="Imagen de un grafico" class="imagenScuarto">
+          </div>
+          <h3 class="h3">Brand Recognition</h3>
+          <p class="parrafo">Boost your brand recognition with each click. Generic links don’t
+            mean a thing. Branded links help instil confidence in your content.</p>
+        </div>
+        <span class="borderDiv"></span>
+        <div class="divDelcuarto div2">
+          <div class="divImagenScuarto">
+            <img src="./images/icon-detailed-records.svg" alt="Imagen de una llama" class="imagenScuarto">
+          </div>
+          <h3 class="h3">Detailed Records</h3>
+          <p class="parrafo">Gain insights into who is clicking your links. Knowing when and where
+            people engage with your content helps inform better decisions.</p>
+        </div>
+        <span class="borderDiv"></span>
+        <div class="divDelcuarto div3">
+          <div class="divImagenScuarto">
+            <img src="./images/icon-fully-customizable.svg" alt="Imagen de unos pinceles" class="imagenScuarto">
+          </div>
+          <h3 class="h3">Fully Customizable</h3>
+          <p class="parrafo">Improve brand awareness and content discoverability through customizable
+            links, supercharging audience engagement.</p>
+        </div>
+      </div>
+
+    </section>
+    <section class="quintoSection ">
+      <h2 class="h2Squinto">Boost your links today</h2>
+      <a class="enlaceAshort" href="#input">Get Started</a>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <img src="images/logo.svg" alt="logo" class="logofooter">
+    </div>
+    <section class="sectionFotter">
+      <div class="divFooter centrar">
+        <h4 class="h4footer h2Squinto">Features</h4>
+        <a href="#" class="enlaceFooter">Link Shortening</a>
+        <a href="#" class="enlaceFooter">Branded Links</a>
+        <a href="#" class="enlaceFooter">Analytics</a>
+      </div>
+      <div class="divFooter centrar">
+        <h4 class="h4footer h2Squinto">Resources</h4>
+        <a href="#" class="enlaceFooter">Blog</a>
+        <a href="#" class="enlaceFooter">Developers</a>
+        <a href="#" class="enlaceFooter">Support</a>
+      </div>
+      <div class="divFooter centrar">
+        <h4 class="h4footer h2Squinto">Company</h4>
+        <a href="#" class="enlaceFooter">About</a>
+        <a href="#" class="enlaceFooter">Our Team</a>
+        <a href="#" class="enlaceFooter">Careers</a>
+        <a href="#" class="enlaceFooter">Contact</a>
+      </div>
+      <div class="divDeIconos">
+        <a href="https://www.facebook.com" target="_blank"><img src="./images/icon-facebook.svg" alt="icono de Facebook" class="iconos"></a>
+        <a href="https://www.twitter.com" target="_blank"><img src="./images/icon-twitter.svg" alt="icono de twitter" class="iconos"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="./images/icon-instagram.svg" alt="icono de instagram" class="iconos"></a>
+        <a href="https://www.pinterest.com" target="_blank"><img src="./images/icon-pinterest.svg" alt="icono de pinterest" class="iconos"></a>
+      </div>
+      
+    </section>
+
+  </footer>
+  <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Centorbi matias</a>.
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
