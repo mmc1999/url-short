@@ -63,6 +63,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 10;
 }
 .active {
     left: 10%;
