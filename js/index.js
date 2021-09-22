@@ -19,6 +19,7 @@ const validarForm = async () => {
     } catch (err) {
         console.log(`El error fue ${err.respuesta} y el codigo del error es el ${err.codigo}`)
     }
+    
 } 
 
 const guardarEnlace = (data) => {
@@ -29,6 +30,7 @@ const guardarEnlace = (data) => {
         enlaceCorto : data.result.full_short_link
     }
     enlaces.push(enlace);
+    guardarLS();
 }
 const mostrarDatos = () => {
     enlaces = JSON.parse(localStorage.getItem("enlaces") || "[]");
